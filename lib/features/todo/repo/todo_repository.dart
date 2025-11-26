@@ -26,11 +26,11 @@ class TodoRepository implements ITodoRepository {
     try {
       Query query = _db
           .collection(FirebaseCollectons.todo)
-          .orderBy('createdAt', descending: true) // 🔥 stable order
+          .orderBy('createdAt', descending: true) 
           .limit(limit);
 
       if (_lastDoc != null) {
-        query = query.startAfterDocument(_lastDoc!); // 🔥 continue after last page
+        query = query.startAfterDocument(_lastDoc!); 
       }
 
       final snapshot = await query.get();
@@ -45,7 +45,7 @@ class TodoRepository implements ITodoRepository {
       final list = snapshot.docs.map((doc) {
         final data = doc.data() as Map<String, dynamic>;
 
-        // 🔥 make sure id exists and is consistent
+        
         data['id'] = doc.id;
 
         return TodoModel.fromMap(data);
@@ -64,7 +64,7 @@ class TodoRepository implements ITodoRepository {
       final now = Timestamp.now();
 
       await doc.set({
-        'id': doc.id, // optional but fine
+        'id': doc.id, 
         'title': todo.title,
         'description': todo.description ?? '',
         'price': todo.price,

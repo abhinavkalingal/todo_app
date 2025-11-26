@@ -32,7 +32,7 @@ class _TodoScreenState extends State<TodoScreen> {
       _scrollController.addListener(() {
         final provider = context.read<TodoProvider>();
 
-        // preload slightly before the absolute bottom
+        
         final reachedBottom =
             _scrollController.position.pixels >=
             _scrollController.position.maxScrollExtent - 200;

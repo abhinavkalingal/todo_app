@@ -29,7 +29,7 @@ class TodoProvider extends ChangeNotifier {
         error = null;
 
         if (list.isEmpty) {
-          noMoreData = true; // only when repo hits end
+          noMoreData = true; 
         }
       },
     );
@@ -73,7 +73,7 @@ class TodoProvider extends ChangeNotifier {
       },
       (_) {
         todos.removeWhere((t) => t.id == docId);
-        // ❌ don't resetPagination() + fetchTodos() here
+        
       },
     );
 
