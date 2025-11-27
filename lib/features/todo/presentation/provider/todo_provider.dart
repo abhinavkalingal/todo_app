@@ -100,7 +100,7 @@ class TodoProvider extends ChangeNotifier {
 
   resetPagination();
 
-  // DO NOT SET END TO 23:59:59
+
   final endExclusive = DateTime(end.year, end.month, end.day + 1);
 
   await fetchTodosByDate(start, endExclusive);
