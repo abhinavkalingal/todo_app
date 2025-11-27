@@ -4,7 +4,7 @@ part 'main_failure.freezed.dart';
 
 @freezed
 class MainFailure with _$MainFailure implements Exception {
-  const MainFailure._();  // ADD THIS LINE - fixes the error!
+  const MainFailure._();  
   
   const factory MainFailure.firebaseFailure({
     required String errMsg,
